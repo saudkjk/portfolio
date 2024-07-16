@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, Container, Typography, Link as MuiLink } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import React from 'react'
+import { Box, Container, Typography, Link as MuiLink } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 export default function Footer() {
   return (
@@ -14,8 +14,8 @@ export default function Footer() {
         </SocialMedia>
       </Container>
     </FooterWrapper>
-  );
-};
+  )
+}
 
 const FooterWrapper = styled(Box)`
   width: 100%;
@@ -23,7 +23,7 @@ const FooterWrapper = styled(Box)`
   color: #fff;
   padding: 20px 0;
   text-align: center;
-`;
+`
 
 const SocialMedia = styled(Box)`
   margin-top: 10px;
@@ -36,4 +36,4 @@ const SocialMedia = styled(Box)`
       text-decoration: underline;
     }
   }
-`;
+`

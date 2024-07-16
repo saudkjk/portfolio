@@ -1,9 +1,9 @@
-import React from 'react';
-import { Typography, Box, Avatar, Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { Icon } from '@iconify/react';
+import React from 'react'
+import { Typography, Box, Avatar, Button } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import { Icon } from '@iconify/react'
 
-import saoud_img from '../../assets/images/saoud_img.png';
+import saoud_img from '../../assets/images/saoud_img.png'
 
 export default function Header() {
   return (
@@ -33,7 +33,7 @@ const Description = styled(Typography)`
   color: white;
   font-family: 'Nunito', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   }
-`;
+`
 
 const CenteredBox = styled(Box)`
   display: flex;
@@ -43,12 +43,12 @@ const CenteredBox = styled(Box)`
   padding-top: 100px;
   padding-bottom: 20px;
   background-color: #242b45;
-`;
+`
 
 const MyAvatar = styled(Avatar)`
   width: 150px; 
   height: 150px;
-`;
+`
 
 const MyButton = styled(Button)`
   
@@ -79,7 +79,7 @@ const MyButton = styled(Button)`
       background-color: #e0e0e0;
     }
   
-`;
+`
 
 const MyButton2 = styled(Button)`
   
@@ -109,4 +109,4 @@ const MyButton2 = styled(Button)`
       background-color: #e0e0e0;
     }
   
-`;
+`

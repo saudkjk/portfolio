@@ -1,8 +1,8 @@
-import { React, useState, useContext } from 'react';
-import { Box, Breadcrumbs, Typography } from '@mui/material';
-import { styled, keyframes } from '@mui/material/styles';
-import { Icon } from '@iconify/react';
-import { FilterContext } from '../../App';
+import { React, useState, useContext } from 'react'
+import { Box, Breadcrumbs, Typography } from '@mui/material'
+import { styled, keyframes, css } from '@mui/material/styles'
+import { Icon } from '@iconify/react'
+import { FilterContext } from '../../App'
 
 export default function SkillsFilter() {
   const [selected, setSelected] = useState(null)
@@ -31,7 +31,7 @@ export default function SkillsFilter() {
       sx={{ m: 1 }}
     >
     </StyledIcon>
-  );
+  )
 
   return (
     <CenteredBox data-aos="zoom-in" data-aos-duration="400">
@@ -43,7 +43,7 @@ export default function SkillsFilter() {
         {otherSkills.map((skill) => renderIcon(skill))}
       </Breadcrumbs>
     </CenteredBox>
-  );
+  )
 }
 
 
@@ -53,7 +53,7 @@ const CenteredBox = styled(Box)`
   align-items: center;
   flex-direction: column;
   padding: 0;
-`;
+`
 
 // maybe use later
 // const bounce = keyframes`
@@ -66,7 +66,7 @@ const CenteredBox = styled(Box)`
 //   60% {
 //     transform: translateY(-15px);
 //   }
-// `;
+// `
 
 const tilt = keyframes`
   0% { transform: rotate(0deg); }
@@ -80,25 +80,21 @@ const tilt = keyframes`
   80% { transform: rotate(1deg); }
   90% { transform: rotate(-1deg); }
   100% { transform: rotate(0deg); }
-`;
+`
 
-const StyledIcon = styled(Icon)(({ isSelected }) => ({
-  width: '80px',
-  height: '80px',
-  cursor: 'pointer',
-  transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+const StyledIcon = styled(Icon)`
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-  '&:hover': {
-    transform: 'scale(1.25)',
-  },
+  &:hover {
+    transform: scale(1.25);
+  }
+  
+  ${({ isSelected }) => isSelected && css`animation: ${tilt} 2s infinite ease-in-out;`}
+`
 
-
-  animation: isSelected ? `${tilt} 1.7s ease-in-out infinite` : 'none',
-}));
-
-
-let programmingLanguagesSkills = ["vscode-icons:file-type-python", "logos:javascript", "skill-icons:cs", "logos:c-plusplus"];
-
-
-let otherSkills = ["logos:react", "vscode-icons:file-type-html", "vscode-icons:file-type-css", "logos:dotnet"];
+let programmingLanguagesSkills = ["vscode-icons:file-type-python", "logos:javascript", "skill-icons:cs", "logos:c-plusplus"]
+let otherSkills = ["logos:react", "vscode-icons:file-type-html", "vscode-icons:file-type-css", "logos:dotnet"]
 

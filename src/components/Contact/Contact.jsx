@@ -1,32 +1,32 @@
-import React, { useRef, useState } from 'react';
-import { Box, Button, TextField, Typography, Snackbar } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from 'react'
+import { Box, Button, TextField, Typography, Snackbar } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
-  const form = useRef();
+  const form = useRef()
 
-  const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' });
+  const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' })
   const handleCloseSnackbar = () => {
-    setSnackbar({ ...snackbar, open: false });
-  };
+    setSnackbar({ ...snackbar, open: false })
+  }
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     emailjs.sendForm('service_j5rh48l', 'template_b34awwa', form.current, 'wMBUlCfYb9Iv0885I')
       .then(
         () => {
-          console.log('SUCCESS!');
-          setSnackbar({ open: true, message: 'Message sent successfully!', severity: 'success' });
-          form.current.reset();
+          console.log('SUCCESS!')
+          setSnackbar({ open: true, message: 'Message sent successfully!', severity: 'success' })
+          form.current.reset()
         },
         (error) => {
-          console.log('FAILED...', error.text);
-          setSnackbar({ open: true, message: 'Failed to send the message, please try again.', severity: 'error' });
+          console.log('FAILED...', error.text)
+          setSnackbar({ open: true, message: 'Failed to send the message, please try again.', severity: 'error' })
         }
-      );
-  };
+      )
+  }
 
   return (
     <Container data-aos="zoom-in" data-aos-duration="400">
@@ -41,28 +41,28 @@ export default function Contact() {
       </Form>
       <Snackbar open={snackbar.open} autoHideDuration={4000} onClose={handleCloseSnackbar} message={snackbar.message} anchorOrigin={{ vertical: 'top', horizontal: 'left' }} />
     </Container>
-  );
+  )
 }
 
 
-const Container = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '2rem',
-});
+const Container = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+`
 
-const Form = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-  width: '100%',
-  maxWidth: '500px',
-  backgroundColor: '#ffffff',
-  padding: '2rem',
-  borderRadius: '8px',
-});
+const Form = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+`
 
 const MyButton = styled(Button)`
   && {
@@ -87,4 +87,4 @@ const MyButton = styled(Button)`
       border: 1px solid #000000;
     }
   }
-`;
+`

@@ -1,14 +1,14 @@
-import { React, useContext, useEffect, useState } from 'react';
-import { Card, CardContent, Typography, Button, Box, Container } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { Icon } from '@iconify/react';
-import { FilterContext } from '../../App';
+import { React, useContext, useEffect, useState } from 'react'
+import { Card, CardContent, Typography, Button, Box, Container } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import { Icon } from '@iconify/react'
+import { FilterContext } from '../../App'
 
-import TankWars_img from '../../assets/images/TankWars_project_img.png';
-import LMS_website_img from '../../assets/images/LMS_project_img.png';
-import AlgoSort_img from '../../assets/images/AlgoSort_project_img.png';
-import ObstacleRover_img from '../../assets/images/ObstacleRover_project_img.png';
-import Weather_img from '../../assets/images/Weather_project_img.png';
+import TankWars_img from '../../assets/images/TankWars_project_img.png'
+import LMS_website_img from '../../assets/images/LMS_project_img.png'
+import AlgoSort_img from '../../assets/images/AlgoSort_project_img.png'
+import ObstacleRover_img from '../../assets/images/ObstacleRover_project_img.png'
+import Weather_img from '../../assets/images/Weather_project_img.png'
 
 export default function Projects() {
 
@@ -30,7 +30,7 @@ export default function Projects() {
       key={label}
     >
     </StyledIcon>
-  );
+  )
 
   const renderStyledCard = (project) => (
     <StyledCard key={project.title} data-aos="fade-up" data-aos-duration="1000">
@@ -50,26 +50,26 @@ export default function Projects() {
         <ProjectImage src={project.image} alt="Project" />
       </ImageContainer>
     </StyledCard>
-  );
+  )
 
   return (
     <CenterContainer>
       <Typography fontSize={28} sx={{ mt: 5, mb: 1 }} data-aos="fade-up" data-aos-duration="1000" >Projects</Typography>
       {projects.map((project) => renderStyledCard(project))}
     </CenterContainer>
-  );
+  )
 }
 
 const TextContainer = styled(CardContent)`
   padding: 16px;
   margin-top: 16px;
   align-items: flex-start; 
-`;
+`
 
 const ImageContainer = styled(Box)`
   width: 480px; 
   height: 400px; 
-`;
+`
 
 const ProjectImage = styled('img')`
   width: 500px; 
@@ -85,7 +85,7 @@ const ProjectImage = styled('img')`
   @media (max-width: 900px) {
     display: none;
   }
-`;
+`
 
 const StyledCard = styled(Card)`
   width: 900px;
@@ -96,15 +96,15 @@ const StyledCard = styled(Card)`
   background-color: #f2f2f2 !important;  
 
   @media (max-width: 900px) {
-    width: 100%; // Make card width responsive
+    width: 100%; 
   }
-`;
+`
 
 const StyledIcon = styled(Icon)`
   margin-right: 16px;
   width: 32px;
   height: 32px;
-`;
+`
 
 const MyButton = styled(Button)`
   && {
@@ -129,13 +129,13 @@ const MyButton = styled(Button)`
       border: 1px solid #000000;
     }
   }
-`;
+`
 
 const CenterContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 let projectsList = [
   {
@@ -200,4 +200,4 @@ let projectsList = [
     image: Weather_img,
     link: 'https://github.com/saudkjk',
   },
-];
+]

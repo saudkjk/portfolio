@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, CardContent, Typography, Container } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import React from 'react'
+import { Card, CardContent, Typography, Container } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
-import U_img from '../../assets/images/UU_img.png';
+import U_img from '../../assets/images/UU_img.png'
 
 export default function Education() {
   return (
@@ -45,14 +45,14 @@ const ProjectImage = styled('img')`
   @media (max-width: 900px) {
     display: none;
   }
-`;
+`
 
 const TextContainer = styled(CardContent)`
   height: 220px;
 
   padding: 16px;
   margin: 16px;
-`;
+`
 
 const StyledCard = styled(Card)`
   display: flex;
@@ -67,10 +67,10 @@ const StyledCard = styled(Card)`
   @media (max-width: 680px) {
     width: 100%; // Make card width responsive
   }
-`;
+`
 
 const CenterContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
