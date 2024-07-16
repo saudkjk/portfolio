@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Container, Typography, Link as MuiLink } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { Container, Typography, Link } from '@mui/material'
+import { FooterWrapper, SocialMedia } from './Footer.styled';
 
 export default function Footer() {
   return (
@@ -10,30 +10,9 @@ export default function Footer() {
           Thank you for checking out my portfolio. <br /> Feel free to connect with me
         </Typography>
         <SocialMedia>
-          <MuiLink href="https://linkedin.com/in/saoud-ald/" target="_blank">LinkedIn</MuiLink>
+          <Link href="https://linkedin.com/in/saoud-ald/" target="_blank">LinkedIn</Link>
         </SocialMedia>
       </Container>
     </FooterWrapper>
   )
 }
-
-const FooterWrapper = styled(Box)`
-  width: 100%;
-  background-color: #242b45;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-`
-
-const SocialMedia = styled(Box)`
-  margin-top: 10px;
-  a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-    
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`

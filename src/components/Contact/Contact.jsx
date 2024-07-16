@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import { Box, Button, TextField, Typography, Snackbar } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { TextField, Typography, Snackbar } from '@mui/material'
 import emailjs from '@emailjs/browser'
+import { Container, Form, MyButton } from './Contact.styled.js'
 
 export default function Contact() {
   const form = useRef()
@@ -17,12 +17,10 @@ export default function Contact() {
     emailjs.sendForm('service_j5rh48l', 'template_b34awwa', form.current, 'wMBUlCfYb9Iv0885I')
       .then(
         () => {
-          console.log('SUCCESS!')
           setSnackbar({ open: true, message: 'Message sent successfully!', severity: 'success' })
           form.current.reset()
         },
         (error) => {
-          console.log('FAILED...', error.text)
           setSnackbar({ open: true, message: 'Failed to send the message, please try again.', severity: 'error' })
         }
       )
@@ -43,48 +41,3 @@ export default function Contact() {
     </Container>
   )
 }
-
-
-const Container = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-`
-
-const Form = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 500px;
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-`
-
-const MyButton = styled(Button)`
-  && {
-    background-color: transparent;
-    color: #000000;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 8px 24px;
-    margin-right: 16px;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: #f0f0f0;
-      color: #000000;
-      border: 1px solid #000000;
-    }
-
-    &:active {
-      background-color: #e0e0e0;
-      border: 1px solid #000000;
-    }
-  }
-`
