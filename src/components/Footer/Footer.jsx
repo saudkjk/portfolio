@@ -6,19 +6,20 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Container maxWidth="md">
-        <Box>
-          <Typography variant="body2">Thank you for checking out my portfolio. <br /> Feel free to connect with me</Typography>
-          <SocialMedia>
-            <MuiLink href="https://linkedin.com/in/saoud-ald/" target="_blank">LinkedIn</MuiLink>
-          </SocialMedia>
-        </Box>
+        <Typography variant="body2">
+          Thank you for checking out my portfolio. <br /> Feel free to connect with me
+        </Typography>
+        <SocialMedia>
+          <MuiLink href="https://linkedin.com/in/saoud-ald/" target="_blank">LinkedIn</MuiLink>
+        </SocialMedia>
       </Container>
     </FooterWrapper>
   );
 };
 
-const FooterWrapper = styled(Container)`
-  background-color: #333;
+const FooterWrapper = styled(Box)`
+  width: 100%;
+  background-color: #242b45;
   color: #fff;
   padding: 20px 0;
   text-align: center;
