@@ -1,16 +1,16 @@
 import { React, useContext, useMemo } from 'react'
 import { Typography } from '@mui/material'
 import { FilterContext } from '../../App'
-import projectsList from './projectsList';
-import ProjectCard from './ProjectCard';
-import { CenterContainer } from './Projects.styled';
+import projectsList from './projectsList'
+import ProjectCard from './ProjectCard'
+import { CenterContainer } from './Projects.styled'
 
 export default function Projects() {
   const { filter } = useContext(FilterContext)
 
   const filteredProjects = useMemo(() => {
-    return filter === null ? projectsList : projectsList.filter((project) => project.skills.includes(filter));
-  }, [filter]);
+    return filter === null ? projectsList : projectsList.filter((project) => project.skills.includes(filter))
+  }, [filter])
 
   return (
     <CenterContainer>

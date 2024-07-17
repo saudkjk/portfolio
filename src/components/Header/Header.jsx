@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { Description, CenteredBox, MyAvatar, TransparentButton, WhiteButton } from './Header.styled';
+import { Description, CenteredBox, MyAvatar, TransparentButton, WhiteButton } from './Header.styled'
 import { Icon } from '@iconify/react'
 
 import saoud_img from '../../assets/images/saoud_img.png'

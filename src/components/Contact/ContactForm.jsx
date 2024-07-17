@@ -8,20 +8,20 @@ export default function ContactForm({ showSnackbar }) {
     const sendEmail = (e) => {
         e.preventDefault()
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for email validation. replace with something more robust later
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ // Regular expression for email validation. replace with something more robust later
 
         const userName = formRef.current.user_name.value.trim()
         const userEmail = formRef.current.user_email.value.trim()
         const message = formRef.current.message.value.trim()
 
         if (!userName || !userEmail || !message) {
-            showSnackbar('Fill in required fields', 'error');
+            showSnackbar('Fill in required fields', 'error')
             return
         }
 
         if (!emailRegex.test(userEmail)) {
-            showSnackbar('Enter a valid email address', 'error');
-            return;
+            showSnackbar('Enter a valid email address', 'error')
+            return
         }
 
         emailjs.sendForm('service_j5rh48l', 'template_b34awwa', formRef.current, 'wMBUlCfYb9Iv0885I')

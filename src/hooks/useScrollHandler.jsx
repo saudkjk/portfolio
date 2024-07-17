@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
-import { debounce } from '../utils/utils';
+import { useEffect, useRef, useState } from 'react'
+import { debounce } from '../utils/utils'
 export function useScrollHandler() {
-    const [selected, setSelected] = useState('Home');
-    const selectedRef = useRef(selected);
+    const [selected, setSelected] = useState('Home')
+    const selectedRef = useRef(selected)
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollY = window.scrollY;
-            let newSelected = selectedRef.current;
+            const scrollY = window.scrollY
+            let newSelected = selectedRef.current
 
             // TODO: replace absolute positions
             if (scrollY <= 480) newSelected = "Home"
@@ -17,15 +17,15 @@ export function useScrollHandler() {
             else newSelected = "Contact"
 
             if (newSelected !== selectedRef.current) {
-                setSelected(newSelected);
-                selectedRef.current = newSelected;
+                setSelected(newSelected)
+                selectedRef.current = newSelected
             }
-        };
+        }
 
-        const debouncedHandleScroll = debounce(handleScroll, 20);
-        window.addEventListener('scroll', debouncedHandleScroll);
-        return () => window.removeEventListener('scroll', debouncedHandleScroll);
-    }, []);
+        const debouncedHandleScroll = debounce(handleScroll, 20)
+        window.addEventListener('scroll', debouncedHandleScroll)
+        return () => window.removeEventListener('scroll', debouncedHandleScroll)
+    }, [])
 
-    return selected;
+    return selected
 }

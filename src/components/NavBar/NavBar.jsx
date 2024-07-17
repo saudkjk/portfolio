@@ -1,13 +1,13 @@
 import { React, useState } from 'react'
 import { Snackbar } from '@mui/material'
-import { CenterContainer, NavBox, NavButton } from './NavBar.styled';
-import { useScrollHandler } from '../../hooks/useScrollHandler';
+import { CenterContainer, NavBox, NavButton } from './NavBar.styled'
+import { useScrollHandler } from '../../hooks/useScrollHandler'
 
 let pages = ['Home', 'Skills', 'Projects', 'Education', 'Contact']
 
 export default function NavBar() {
   const [snackbar, setSnackbar] = useState({ open: false, message: '' })
-  const selected = useScrollHandler(pages);
+  const selected = useScrollHandler(pages)
 
   const handleClick = (label) => {
     if (label === "Skills") setSnackbar({ open: true, message: 'Click one of the skills to filter the projects!' })

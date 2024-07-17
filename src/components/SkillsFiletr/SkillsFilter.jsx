@@ -1,7 +1,7 @@
 import { React, useContext } from 'react'
 import { Breadcrumbs, Typography } from '@mui/material'
 import { FilterContext } from '../../App'
-import { CenteredBox, StyledIcon } from './SkillsFilter.styled';
+import { CenteredBox, StyledIcon } from './SkillsFilter.styled'
 
 let programmingLanguagesSkills = ["vscode-icons:file-type-python", "logos:javascript", "skill-icons:cs", "logos:c-plusplus"]
 let otherSkills = ["logos:react", "vscode-icons:file-type-html", "vscode-icons:file-type-css", "logos:dotnet"]

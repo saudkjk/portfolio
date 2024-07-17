@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Typography, Link } from '@mui/material'
-import { FooterWrapper, SocialMedia } from './Footer.styled';
+import { FooterWrapper, SocialMedia } from './Footer.styled'
 
 export default function Footer() {
   return (
