@@ -4,12 +4,8 @@ import { Typography, Box, Avatar, Button } from '@mui/material';
 export const Description = styled(Typography)`
   && {
     max-width: 600px;
-    width: 100%;
+    width: 95%;
     text-align: center;
-    margin: 0 auto;
-    padding-right: 100px; !important;
-    padding-left: 100px; !important;
-    
     line-height: 1.5;
     letter-spacing: 1;
     font-size: 28px;
