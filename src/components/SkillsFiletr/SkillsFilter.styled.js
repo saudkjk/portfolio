@@ -27,6 +27,7 @@ const tilt = keyframes`
 export const StyledIcon = styled(Icon)`
   width: 80px;
   height: 80px;
+  margin: 8px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 

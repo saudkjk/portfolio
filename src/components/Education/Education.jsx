@@ -7,7 +7,7 @@ import U_img from '../../assets/images/UU_img.png'
 export default function Education() {
   return (
     <CenterContainer>
-      <Typography fontSize={28} sx={{ mt: 6, mb: 3 }} data-aos="fade-up" data-aos-duration="1000">Education</Typography>
+      <Typography sx={{ fontSize: 28, mt: 6, mb: 3 }} data-aos="fade-up" data-aos-duration="1000">Education</Typography>
       <StyledCard data-aos="fade-up" data-aos-duration="1000">
         <ProjectImage src={U_img} alt="Project" />
         <TextContainer>
