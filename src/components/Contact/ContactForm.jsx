@@ -3,14 +3,16 @@ import { TextField } from '@mui/material'
 import emailjs from '@emailjs/browser'
 import { Form, MyButton } from './Contact.styled.js'
 
-const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
+
 
 export default function ContactForm({ showSnackbar }) {
     const formRef = useRef()
     const sendEmail = (e) => {
         e.preventDefault()
+
+        const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+        const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+        const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ // Regular expression for email validation. replace with something more robust later
 
