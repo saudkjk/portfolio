@@ -3,6 +3,10 @@ import { TextField } from '@mui/material'
 import emailjs from '@emailjs/browser'
 import { Form, MyButton } from './Contact.styled.js'
 
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
+
 export default function ContactForm({ showSnackbar }) {
     const formRef = useRef()
     const sendEmail = (e) => {
@@ -24,7 +28,7 @@ export default function ContactForm({ showSnackbar }) {
             return
         }
 
-        emailjs.sendForm('service_j5rh48l', 'template_b34awwa', formRef.current, 'wMBUlCfYb9Iv0885I')
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, USER_ID)
             .then(
                 () => {
                     showSnackbar('Message sent successfully!', 'success');
