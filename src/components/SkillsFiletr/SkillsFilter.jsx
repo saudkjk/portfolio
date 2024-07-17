@@ -1,19 +1,16 @@
-import { React, useState, useContext } from 'react'
+import { React, useContext } from 'react'
 import { Breadcrumbs, Typography } from '@mui/material'
 import { FilterContext } from '../../App'
 import { CenteredBox, StyledIcon } from './SkillsFilter.styled';
 
 export default function SkillsFilter() {
-  const [selected, setSelected] = useState(null)
-  const { setFilter } = useContext(FilterContext)
+  const { filter, setFilter } = useContext(FilterContext)
 
   const handleClick = (event, skill) => {
     event.preventDefault()
-    if (skill === selected) {
-      setSelected(null)
+    if (skill === filter) {
       setFilter(null)
     } else {
-      setSelected(skill)
       setFilter(skill)
     }
   }
@@ -23,7 +20,7 @@ export default function SkillsFilter() {
       icon={skill}
       width="80"
       height="80"
-      isSelected={skill === selected}
+      isSelected={skill === filter}
       key={skill}
       onClick={(event) => handleClick(event, skill)}
       sx={{ m: 1 }}

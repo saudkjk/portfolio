@@ -14,11 +14,11 @@ import 'aos/dist/aos.css'
 export const FilterContext = createContext()
 
 export default function App() {
+  const [filter, setFilter] = useState(null)
+
   useEffect(() => {
     AOS.init()
   }, [])
-
-  const [filter, setFilter] = useState(null)
 
   return (
     <>

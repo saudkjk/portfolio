@@ -2,7 +2,6 @@ import React from 'react'
 import { Typography } from '@mui/material'
 import { ProjectImage, TextContainer, StyledCard, CenterContainer } from './Education.styled';
 
-
 import U_img from '../../assets/images/UU_img.png'
 
 export default function Education() {

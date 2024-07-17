@@ -5,7 +5,6 @@ import { Container, Form, MyButton } from './Contact.styled.js'
 
 export default function Contact() {
   const form = useRef()
-
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' })
   const handleCloseSnackbar = () => {
     setSnackbar({ ...snackbar, open: false })

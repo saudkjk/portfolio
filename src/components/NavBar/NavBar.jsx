@@ -2,14 +2,12 @@ import { React, useState, useEffect, useRef } from 'react'
 import { Snackbar } from '@mui/material'
 import { CenterContainer, NavBox, NavButton } from './NavBar.styled';
 
-let pages = ['Home', 'Skills', 'Projects', 'Education', 'Contact']
-
 export default function NavBar() {
   const [selected, setSelected] = useState("Home")
   const [scrolling, setScrolling] = useState(false)
-  const selectedRef = useRef(selected)
-
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' })
+  const selectedRef = useRef(selected)
+  
   const handleCloseSnackbar = () => {
     setSnackbar({ ...snackbar, open: false })
   }
@@ -72,3 +70,5 @@ export default function NavBar() {
     </CenterContainer>
   )
 }
+
+let pages = ['Home', 'Skills', 'Projects', 'Education', 'Contact']
