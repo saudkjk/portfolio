@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { debounce } from '../utils/utils'
+
 export function useScrollHandler() {
     const [selected, setSelected] = useState('Home')
     const selectedRef = useRef(selected)

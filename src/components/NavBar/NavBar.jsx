@@ -7,7 +7,7 @@ let pages = ['Home', 'Skills', 'Projects', 'Education', 'Contact']
 
 export default function NavBar() {
   const [snackbar, setSnackbar] = useState({ open: false, message: '' })
-  const selected = useScrollHandler(pages)
+  const selected = useScrollHandler()
 
   const handleClick = (label) => {
     if (label === "Skills") setSnackbar({ open: true, message: 'Click one of the skills to filter the projects!' })
