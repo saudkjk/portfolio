@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Button } from '@mui/material';
 
 export const NavBox = styled(Box)`
   position: fixed;
@@ -20,8 +20,8 @@ export const NavBox = styled(Box)`
   }
 `;
 
-export const NavButton = styled(Box)`
-  padding: 8px 24px;
+export const NavButton = styled(Button)`
+  padding: 4px 16px;
   border-radius: 20px;
   text-align: center;
   cursor: pointer;

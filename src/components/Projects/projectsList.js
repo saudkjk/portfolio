@@ -2,7 +2,6 @@ import TankWars_img from '../../assets/images/TankWars_project_img.png'
 import LMS_website_img from '../../assets/images/LMS_project_img.png'
 import AlgoSort_img from '../../assets/images/AlgoSort_project_img.png'
 import ObstacleRover_img from '../../assets/images/ObstacleRover_project_img.png'
-import Weather_img from '../../assets/images/Weather_project_img.png'
 
 const projectsList = [
     {
@@ -52,19 +51,6 @@ const projectsList = [
             ""
         ],
         image: ObstacleRover_img,
-        link: 'https://github.com/saudkjk',
-    },
-
-    {
-        title: 'Today’s Weather - Weather Application',
-        description: 'Developed an interactive weather application using React, providing detailed weather information and forecasts. Integrated OpenWeatherMap API to retrieve and display weather data for specified locations. Designed user interfaces with React components, ensuring an intuitive and user-friendly experience.',
-        skills: [
-            "logos:react",
-            "logos:javascript",
-            "vscode-icons:file-type-html",
-            "vscode-icons:file-type-css"
-        ],
-        image: Weather_img,
         link: 'https://github.com/saudkjk',
     },
 ]
