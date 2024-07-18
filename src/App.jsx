@@ -1,7 +1,7 @@
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import Header from './components/Header/Header'
-import SkillsFilter from './components/SkillsFiletr/SkillsFilter'
+import SkillsFilter from './components/SkillsFilter/SkillsFilter'
 import Projects from './components/Projects/Projects'
 import Education from './components/Education/Education'
 import Contact from './components/Contact/Contact'
