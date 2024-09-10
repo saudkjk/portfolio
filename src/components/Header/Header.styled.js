@@ -49,7 +49,7 @@ export const TransparentButton = styled(Button)`
 
   &:hover {
     background-color: transparent;
-    transform: scale(1.15) !important;
+    transform: scale(1.05) !important;
   }
 
   &:active {

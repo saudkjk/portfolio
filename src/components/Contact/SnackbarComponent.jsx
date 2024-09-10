@@ -1,5 +1,5 @@
-import React from 'react'
-import { Snackbar } from '@mui/material'
+import React from "react";
+import { Snackbar } from "@mui/material";
 
 export default function SnackbarComponent({ snackbar, handleCloseSnackbar }) {
     return (
@@ -8,7 +8,7 @@ export default function SnackbarComponent({ snackbar, handleCloseSnackbar }) {
             autoHideDuration={4000}
             onClose={handleCloseSnackbar}
             message={snackbar.message}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         />
-    )
+    );
 }

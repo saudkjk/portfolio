@@ -7,7 +7,7 @@ export const NavBox = styled(Box)`
   display: flex;
   border-radius: 30px;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(250, 250, 250, 0.8);
   backdrop-filter: blur(20px);
   padding: 8px;
   margin: 16px;
@@ -26,7 +26,7 @@ export const NavButton = styled(Button)`
   text-align: center;
   cursor: pointer;
   color: ${({ currentlySelected }) => (currentlySelected ? 'rgb(0, 0, 0)' : 'rgb(80, 80, 80)')};
-  background-color: ${({ currentlySelected }) => (currentlySelected ? 'rgb(242, 242, 242)' : 'transparent')};
+  background-color: ${({ currentlySelected }) => (currentlySelected ? 'rgb(240, 240, 240)' : 'transparent')};
 
   &:hover {
     color: rgb(0, 0, 0);
