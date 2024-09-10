@@ -13,10 +13,33 @@ export const NavBox = styled(Box)`
   margin: 16px;
   width: 520px;
 
-  @media (max-width: 550px) {
-    flex-direction: row;
-    margin: 0;
-    border-radius: 0;
+  @media (max-width: 768px) {
+    display: none;  /* Hide desktop navbar on mobile */
+  }
+`;
+
+export const MobileNavBox = styled(Box)`
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  padding: 60px 50px 0px 0px;
+`;
+
+export const MobileMenuButton = styled(Box)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 2px;
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
   }
 `;
 

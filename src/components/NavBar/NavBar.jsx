@@ -1,11 +1,19 @@
 import { React, useState } from "react";
-import { Snackbar } from "@mui/material";
-import { CenterContainer, NavBox, NavButton } from "./NavBar.styled";
+import { Snackbar, IconButton, Drawer, List, ListItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import {
+    CenterContainer,
+    NavBox,
+    NavButton,
+    MobileMenuButton,
+    MobileNavBox,
+} from "./NavBar.styled";
 
 const pages = ["Home", "Skills", "Projects", "Education", "Contact"];
 
 export default function NavBar({ activeSection }) {
     const [snackbar, setSnackbar] = useState({ open: false, message: "" });
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     const handleClick = (label) => {
         if (label === "Skills") {
@@ -24,31 +32,73 @@ export default function NavBar({ activeSection }) {
             top: offsetPosition,
             behavior: "smooth",
         });
+        setIsDrawerOpen(false); 
     };
 
     const handleCloseSnackbar = () => {
         setSnackbar({ ...snackbar, open: false });
     };
 
+    const toggleDrawer = () => {
+        setIsDrawerOpen(!isDrawerOpen);
+    };
+
     return (
-        <CenterContainer>
-            <NavBox>
-                {pages.map((label) => (
-                    <NavButton
-                        key={label}
-                        currentlySelected={activeSection === label}
-                        onClick={() => handleClick(label)}
-                    >
-                        {label}
-                    </NavButton>
-                ))}
-            </NavBox>
+        <>
+            <CenterContainer>
+                {/* Mobile Menu Button */}
+                <MobileMenuButton>
+                    <IconButton onClick={toggleDrawer}>
+                        <MenuIcon />
+                    </IconButton>
+                </MobileMenuButton>
+
+                {/* Desktop Navigation */}
+                <NavBox>
+                    {pages.map((label) => (
+                        <NavButton
+                            key={label}
+                            currentlySelected={activeSection === label}
+                            onClick={() => handleClick(label)}
+                        >
+                            {label}
+                        </NavButton>
+                    ))}
+                </NavBox>
+
+                {/* Mobile Drawer */}
+                <Drawer
+                    anchor='left'
+                    open={isDrawerOpen}
+                    onClose={toggleDrawer}
+                >
+                    <MobileNavBox>
+                        <List>
+                            {pages.map((label) => (
+                                <ListItem
+                                    key={label}
+                                    onClick={() => handleClick(label)}
+                                >
+                                    <NavButton
+                                        currentlySelected={
+                                            activeSection === label
+                                        }
+                                    >
+                                        {label}
+                                    </NavButton>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </MobileNavBox>
+                </Drawer>
+            </CenterContainer>
+
             <Snackbar
                 open={snackbar.open}
                 autoHideDuration={4000}
                 onClose={handleCloseSnackbar}
                 message={snackbar.message}
             />
-        </CenterContainer>
+        </>
     );
 }

@@ -13,15 +13,13 @@ export const ProjectImage = styled('img')`
 `;
 
 export const TextContainer = styled(CardContent)`
-  height: 220px;
   padding: 16px;
-  margin: 16px;
+  margin: 16px ;
 `;
 
 export const StyledCard = styled(Card)`
   display: flex;
   width: 680px;
-  height: 300px;
   align-items: center;
   background-color: #f2f2f2 !important;
   border-radius: 8px;

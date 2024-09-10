@@ -8,6 +8,7 @@ export const CenteredBox = styled(Box)`
   align-items: center;
   flex-direction: column;
   padding: 0;
+  width: 100%;
 `;
 
 const tilt = keyframes`
@@ -34,6 +35,14 @@ export const StyledIcon = styled(Icon)`
   &:hover {
     transform: scale(1.25);
   }
-  
-  ${({ isSelected }) => isSelected && css`animation: ${tilt} 2s infinite ease-in-out;`}
+
+  ${({ isSelected }) => isSelected && css`
+    animation: ${tilt} 2s infinite ease-in-out;
+  `}
+
+  @media (max-width: 600px) {
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+  }
 `;
